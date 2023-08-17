@@ -103,7 +103,7 @@ try:
             el.delete(0, "end")
             er.delete(0, "end")
             return
-        if len(lst.get()) != 0 and askokcancel("重置列表", "执行此操作要重置列表。\n确定要重置列表吗？"):
+        if len(lst.get()) != 0 and len(eval(lst.get())) != 0 and askokcancel("重置列表", "执行此操作要重置列表。\n确定要重置列表吗？"):
             lstb.delete(0, "end")
         lstb.insert("end", *list(range(int(l), int(r)+1)))
         el.delete(0, "end")
@@ -112,7 +112,7 @@ try:
     lrbt.place(x = 280, y = 225, width = 100, height = 31, anchor = "nw")
 
     def reset():
-        if len(lst.get()) == 0:
+        if len(lst.get()) == 0 or len(eval(lst.get())) == 0:
             return
         if askokcancel("重置列表", "确定要重置列表吗？"):
             lstb.delete(0, "end")
